@@ -1,0 +1,25 @@
+class StepLocker {
+    private String code;
+    private final int lockerNumber;
+
+    StepLocker(int lockerNumber, String code) {
+        this.lockerNumber = lockerNumber;
+        this.code = code;
+    }
+
+    void changeCode(String oldCode, String newCode) {
+        if (code.equals(oldCode)) {
+            code = newCode;
+            System.out.println("Code changed");
+        } else {
+            System.out.println("Wrong code");
+        }
+    }
+
+    public static void main(String[] args) {
+        StepLocker l = new StepLocker(101, "1234");
+
+        l.changeCode("1234", "5678");
+        l.changeCode("0000", "9999");
+    }
+}
